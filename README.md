@@ -472,6 +472,39 @@ userController.edit = function(req, res) {
 };
 ```
 
+### 6.4 Create Upudate funciton
+
+Add the `userController.update` function as the following:
+
+```js
+userController.update = function(req, res) {
+  const updatedUser = req.body;
+  User.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: {
+        name: updatedUser.name,
+        address: updatedUser.address,
+        position: updatedUser.position,
+        salary: updatedUser.salary
+      }
+    },
+    { new: true }, // return updated
+    function(err, user) {
+      console.log("in update callback");
+      if (err) {
+        console.log("failed to update", err);
+      }
+      res.json(user);
+    }
+  );
+};
+```
+
+### 6.5 Add the Router
+
+Add a router `router.put("/user/:id?", user.update);` to the `routers/user.js`.
+
 ## 7 Delete User
 
 ### 7.1 Create JS Code File
