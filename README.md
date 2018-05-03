@@ -6,8 +6,10 @@ This tutorial shows how to create an express web app that has CRUD operations.
 
 First, install `express-generator` command line to initialize a project.
 
-`npm install -g express-generator`
-`express crud-demo --view=ejs`
+```sh
+npm install -g express-generator
+express crud-demo --view=ejs
+```
 
 It creates a project in `crud-demo` folder. Inside the `crud-demo` folder, run `npm install` to install required packages. You can run `npm start` and see the initial web site.
 
