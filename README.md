@@ -13,7 +13,7 @@ express crud-demo --view=ejs
 
 It creates a project in `crud-demo` folder. Inside the `crud-demo` folder, run `npm install` to install required packages. You can run `npm start` and see the initial web site.
 
-Second, create a MongoDB account in `mlib.com`. The accounts has 500MB free space. Click `Create new` to create a new database with the free `SANDBOX` plan type. Give it a name such as `is445`. Then create a database user by clicking `Users` tab. The page shows the connections string like `mongodb://<dbuser>:<dbpassword>@ds163689.mlab.com:63689/is445`.
+Second, create a MongoDB account in `mlab.com`. The accounts has 500MB free space. Click `Create new` to create a new database with the free `SANDBOX` plan type. Give it a name such as `is445`. Then create a database user by clicking `Users` tab. The page shows the connections string like `mongodb://<dbuser>:<dbpassword>@ds163689.mlab.com:63689/is445`.
 
 Then install `mongoose` database driver: `npm install -S mongoose`.
 
@@ -31,7 +31,7 @@ mongoose
   .catch(err => console.error(err));
 ```
 
-You should set enviornment variables `MDB_USER` and `MDB_PASSWORD` to use your MongoDB user account and password. To avoid setting in devolopment, you can use dotenv package by using `npm i -S dotenv` and create a `.evn` file in project root folder with the following content:
+You should set enviornment variables `MDB_USER` and `MDB_PASSWORD` to use your MongoDB user account and password. To avoid setting in devolopment, you can use dotenv package by using `npm i -S dotenv` and create a `.env` file in project root folder with the following content:
 
 ```sh
 MDB_USER=your-mongodb-user
