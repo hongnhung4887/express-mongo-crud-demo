@@ -528,3 +528,27 @@ userController.delete = function(req, res) {
 ### 7.3 Add Router Path
 
 Add `router.delete("/user/:id", user.delete);` to `routes/users.js`.
+
+## 8 Deploy to Heroku
+
+All the following commands are executed in the project root foler.
+
+First, add node engine config in `package.json` file:
+
+```json
+"engines": {
+  "node": "10.0.0"
+},
+```
+
+Then create a remote heroku repository `heroku create`. Write the app name at the end of the output.
+
+Then config runtime enviornment variables:
+
+```sh
+heroku config:set MDB_USER=your_db_username MDB_PASSWORD=your_db_password --app=your_heroku_appname
+```
+
+Run `git push heroku master`. This command push local repository to the Heroku repository and deploy it. You should run this command if you commit any new changes to the local repository.
+
+Finally use `heroku open` command to access the app in a browser. The app should be up and running !
